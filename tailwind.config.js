@@ -21,7 +21,17 @@ module.exports = {
         yellow: "rgba(255,193,7,.65);",
         lightRed: "rgba(181, 176, 176,.65);",
       },
+      keyframes: {
+        wave: {
+          "0%": { transform: "translateY(0px)" },
+          "20%": { transform: "translateY(-10px)" },
+          "40%": { transform: "translateY(0px)" },
+        },
+      },
+      animation: {
+        wave: "wave 2s ease-in-out infinite",
+      },
     },
   },
-  plugins: [require("tailwindcss-3d")],
+  plugins: [require("tailwindcss-3d"), require("tailwindcss-animation-delay")],
 };
