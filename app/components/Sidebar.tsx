@@ -2,7 +2,7 @@ import Link from "next/link";
 import { sidebarMenu } from "../../data/sidebarMenu";
 function Sidebar() {
   return (
-    <div className="max-h-screen flex flex-row basis-1/6">
+    <div className="max-h-screen lg:flex flex-row basis-1/6 hidden ">
       <div className="flex flex-col overflow-hidden w-[100%] border-r-[1px] border-light">
         <div className="flex items-center justify-center h-20 ">
           <h1 className="text-3xl uppercase text-white ">
