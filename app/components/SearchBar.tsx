@@ -23,25 +23,55 @@ function SearchBar() {
   return (
     <>
       <div
-        className="lg:hidden block cursor-pointer px-5 relative text-red-800"
+        className="lg:hidden block cursor-pointer px-5 relative text-red-800 text-xl"
         onClick={() => setSearchSectionIsOpen((pre) => !pre)}
       >
         {"explore"
           .toUpperCase()
           .split("")
-          .map((letter, index) => (
-            <span
-              key={index}
-              className={`${
-                !searchSectionIsOpen &&
-                `animate-wave animation-delay-${
-                  (index + 1) * 100
-                } inline-block relative`
-              }`}
-            >
-              {letter}
-            </span>
-          ))}
+          .map((character, index) => {
+            return (
+              <span
+                key={index}
+                className={
+                  !searchSectionIsOpen
+                    ? `animate-wave animation-delay-${
+                        (index + 1) * 100
+                      } inline-block relative`
+                    : " "
+                }
+              >
+                {character}
+              </span>
+            );
+          })}
+        {/* <span className="animate-wave animation-delay-100 inline-block relative">
+          E
+        </span>
+        <span className="animate-wave animation-delay-200 inline-block relative">
+          X
+        </span>
+        <span className="animate-wave animation-delay-300 inline-block relative">
+          P
+        </span>
+        <span className="animate-wave animation-delay-400 inline-block relative">
+          L
+        </span>
+        <span className="animate-wave animation-delay-500 inline-block relative">
+          O
+        </span>
+        <span className="animate-wave animation-delay-600 inline-block relative">
+          R
+        </span>
+        <span className="animate-wave animation-delay-700 inline-block relative">
+          E
+        </span>
+        <span className="animate-wave animation-delay-800 inline-block relative">
+          E
+        </span>
+        <span className="animate-wave animation-delay-900 inline-block relative">
+          E
+        </span> */}
       </div>
       <div
         className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex items-center max-[640px]:w-full px-5 lg:mr-auto top-[100%] h-0 lg:h-11 overflow-hidden transition-all duration-300 ${
