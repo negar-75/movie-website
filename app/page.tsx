@@ -41,14 +41,14 @@ async function Home() {
   return (
     <div className="lg:mx-5">
       <Header />
-      <div className="title text-white font-semibold mb-8 relative flex items-center  ">
-        <span className="flex-shrink text-2xl text-white px-4 ">
+      <div className="title text-white font-semibold mb-8 relative flex items-center pr-4 ">
+        <span className="flex-shrink lg:text-2xl text-white px-4 text-lg">
           Popular To Watch
         </span>
         <div className="flex-grow h-px bg-light"></div>
       </div>
 
-      <div className="grid grid-cols-fluid gap-16 mb-14">
+      <div className="grid lg:grid-cols-fluid gap-14 mb-14  mx-5 lg:mx-0">
         {data.results.map((item: Movie) => (
           <Movie
             key={item.id}
