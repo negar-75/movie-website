@@ -32,7 +32,7 @@ function Movie({ image, title, averageVote, id, category }: MovieProps) {
         rgba(30,27,38,0) 10%, 
         rgba(30,27,38,0) 85%, 
         rgba(30,27,38,1) 100%
-    ); `,
+    )`,
             }}
           ></div>
           <Image
