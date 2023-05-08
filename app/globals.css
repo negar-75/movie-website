@@ -40,16 +40,17 @@ body{
     }
   }
 
-svg path{
+.svg-draw{
   stroke-dasharray: 1000px;
   stroke-dashoffset: 1000px;
   animation: animate 9s forwards;
   stroke-width: 0.5px;
+  display: block;
   
 }
 
 @media screen and (min-width:640px){
-  svg{
+  .svg-draw{
   display: none;
   }
 }
