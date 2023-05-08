@@ -8,16 +8,16 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import Footer from "./components/Footer";
 config.autoAddCss = false;
 
-const roboto = Roboto({
-  weight: ["400", "700", "100"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
-});
-const poppins = Poppins({
-  weight: ["400", "700", "100"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
+// const roboto = Roboto({
+//   weight: ["400", "700", "100"],
+//   subsets: ["latin"],
+//   variable: "--font-roboto",
+// });
+// const poppins = Poppins({
+//   weight: ["400", "700", "100"],
+//   subsets: ["latin"],
+//   variable: "--font-poppins",
+// });
 
 export default function RootLayout({
   children,
@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} ${poppins.className}  bg-dark`}>
+      <body className={`  bg-dark`}>
         <div className=" w-screen flex flex-col lg:flex-row ">
           <Sidebar />
           <div className="basis-5/6">
