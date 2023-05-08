@@ -74,20 +74,21 @@ function SearchBar() {
         </span> */}
       </div>
       <div
-        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex items-center max-[640px]:w-full px-5 lg:mr-auto top-[100%] h-0 lg:h-11 overflow-hidden transition-all duration-300 ${
+        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex  items-center max-[640px]:w-full justify-center lg:mr-auto top-[100%] h-0 lg:h-11 overflow-hidden transition-all duration-300 ${
           searchSectionIsOpen && "h-[55px]"
         }`}
       >
-        <div className="border-[1px] rounded-full border-light px-4 flex items-center justify-between max-[640px]:w-full ">
+        <div className="border-[1px] rounded-full border-light px-2 lg:px-4 flex items-center max-[640px]:w-[90%]   ">
           <input
             type="text"
             placeholder="Search..."
-            className="py-2 bg-transparent outline-none text-light "
+            className="py-2  bg-transparent outline-none text-light max-[640px]:w-[90%] lg:w-[300px]"
             onChange={(e) => setQuery(e.target.value)}
           />
           <FontAwesomeIcon
             icon={faSearch}
             style={{ fontSize: 20, color: "#807979", cursor: "pointer" }}
+            className=" max-[640px]:w-[10%] "
           />
         </div>
       </div>
