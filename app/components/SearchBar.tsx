@@ -1,29 +1,38 @@
 "client side";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { ChangeEvent } from "react";
+import _ from "lodash";
 
 function SearchBar() {
   const [data, setData] = useState<any[]>([]);
   const [searchSectionIsOpen, setSearchSectionIsOpen] =
     useState<boolean>(false);
-  const [query, setQuery] = useState<string>("");
+
   const imagePath = "https://image.tmdb.org/t/p/original";
 
-  useEffect(() => {
-    async function getData() {
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${query}`;
-      const res = await fetch(url);
-      const movies = await res.json();
-      setData(movies.results);
-    }
-    getData();
-  }, [query]);
+  const debouncedFunc = useMemo(
+    () => _.debounce((userInput) => getData(userInput), 1000),
+    []
+  );
+
+  async function getData(query: string) {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${query}`;
+    const res = await fetch(url);
+    const movies = await res.json();
+    setData(movies.results);
+  }
+
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const userInput = e.target.value;
+    debouncedFunc(userInput);
+  };
 
   return (
     <>
       <div
-        className="lg:hidden block cursor-pointer px-5 relative text-red-800 text-xl"
+        className="lg:hidden block cursor-pointer px-5 relative  text-red-800 text-xl"
         onClick={() => setSearchSectionIsOpen((pre) => !pre)}
       >
         {"explore"
@@ -45,36 +54,9 @@ function SearchBar() {
               </span>
             );
           })}
-        {/* <span className="animate-wave animation-delay-100 inline-block relative">
-          E
-        </span>
-        <span className="animate-wave animation-delay-200 inline-block relative">
-          X
-        </span>
-        <span className="animate-wave animation-delay-300 inline-block relative">
-          P
-        </span>
-        <span className="animate-wave animation-delay-400 inline-block relative">
-          L
-        </span>
-        <span className="animate-wave animation-delay-500 inline-block relative">
-          O
-        </span>
-        <span className="animate-wave animation-delay-600 inline-block relative">
-          R
-        </span>
-        <span className="animate-wave animation-delay-700 inline-block relative">
-          E
-        </span>
-        <span className="animate-wave animation-delay-800 inline-block relative">
-          E
-        </span>
-        <span className="animate-wave animation-delay-900 inline-block relative">
-          E
-        </span> */}
       </div>
       <div
-        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex  items-center max-[640px]:w-full justify-center lg:mr-auto top-[100%] h-0 lg:h-11 overflow-hidden transition-all duration-300 ${
+        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex  items-center max-[640px]:w-full justify-center lg:mr-auto top-[100%] h-0 lg:h-11 max-[640px]:overflow-hidden transition-all duration-300 ${
           searchSectionIsOpen && "h-[55px]"
         }`}
       >
@@ -83,7 +65,7 @@ function SearchBar() {
             type="text"
             placeholder="Search..."
             className="py-2  bg-transparent outline-none text-light max-[640px]:w-[90%] lg:w-[300px]"
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleInput}
           />
           <FontAwesomeIcon
             icon={faSearch}
@@ -93,10 +75,13 @@ function SearchBar() {
         </div>
       </div>
 
-      <ul className="list absolute top-[4rem] z-50 text-white bg-black px-4 w-[360px] ">
-        {data &&
-          data.map((movie) => (
-            <li className=" mt-4 border-b-2 hover:text-red-800 cursor-pointer">
+      {data.length > 0 && (
+        <ul className=" absolute top-[115px] lg:top-[80px]  z-50 text-white bg-black px-4 lg:w-[360px] h-[100vh] overflow-scroll w-[350px] ">
+          {data.map((movie, index) => (
+            <li
+              className=" mt-4 border-b-2 hover:text-red-800 cursor-pointer"
+              key={index}
+            >
               <div className="flex items-center gap-3 py-3">
                 <img
                   src={imagePath + movie.poster_path}
@@ -106,7 +91,8 @@ function SearchBar() {
               </div>
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </>
   );
 }
