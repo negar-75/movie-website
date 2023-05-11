@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import UserMenu from "./UserMenu";
 function Navbar() {
   return (
-    <div className="lg:h-20 flex items-center lg:px-10  h-[60px] relative  max-[640px]:w-[100%] max-[640px]:absolute top-0 left-0 z-10   ">
+    <div className="lg:h-20 flex items-center lg:px-10  h-[60px] relative  max-[640px]:w-[100%]  top-0 left-0 z-10   ">
       <SearchBar />
       <div className="text-light mr-auto flex gap-20 h-full ">
         <div className="group hover:bg-slate-700/60 relative hidden lg:block z-20 ">
