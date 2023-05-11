@@ -24,7 +24,7 @@ function Movie({ image, title, averageVote, id, category }: MovieProps) {
       <div className="bg-[#1e1b26] relative h-[500px] duration-75 flex flex-col items-center rounded-md overflow-hidden">
         <div className="relative w-full h-[70%]">
           <div
-            className="gradiant absolute top-0 left-0 right-0 bottom-0 z-10"
+            className="gradiant absolute top-0 left-0 right-0 bottom-0 z-[6]"
             style={{
               background: `linear-gradient(
         to bottom, 
