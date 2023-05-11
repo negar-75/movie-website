@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 function Header() {
   return (
-    <div className="lg:h-[500px] mb-10 h-[100vh] relative  ">
+    <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
       <video
         id="background-video"
         autoPlay
@@ -19,7 +19,7 @@ function Header() {
         />
       </video>
 
-      <div className="absolute lg:top-40 left-10 text-white max-[640px]:w-[200px] whitespace-pre-line bottom-[300px] z-10">
+      <div className="absolute lg:top-40 left-10 text-white max-[640px]:w-[200px] whitespace-pre-line bottom-[300px] z-[8]">
         <div>
           <p className="lg:text-8xl text-6xl font-semibold animate__animated animate__fadeInDown animate__slow tracking-[.15em] leading-relaxed">
             Enjoy Movie
@@ -27,7 +27,7 @@ function Header() {
         </div>
       </div>
       <div
-        className="absolute z-40 bottom-10 right-10 text-white border-2 px-10 py-3
+        className="absolute z-10 bottom-10 right-10 text-white border-2 px-10 py-3
          rounded-full flex items-center gap-5 cursor-pointer animate__animated animate__fadeInRight"
       >
         <span>Watch more</span>
