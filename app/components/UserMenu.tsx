@@ -22,7 +22,7 @@ function UserMenu() {
   }, []);
   return (
     <div
-      className="avatar flex items-center relative  h-full px-2"
+      className="avatar flex items-center relative h-full px-5"
       ref={userMenuRef}
     >
       <div
