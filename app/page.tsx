@@ -1,18 +1,13 @@
 import Header from "./components/Header";
 import Movie from "./components/Movie";
+import Title from "./components/title";
 
-//https://api.themoviedb.org/3/movie/550?api_key=9f4e84c8fccb058b760ce9cbcf7b1cb8
 async function getData() {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=1`
   );
 
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  // Recommendation: handle errors
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
@@ -41,12 +36,8 @@ async function Home() {
   return (
     <div className="lg:mx-5">
       <Header />
-      <div className="title text-white font-semibold mb-8 relative flex items-center pr-4 ">
-        <span className="flex-shrink lg:text-2xl text-white px-4 text-lg">
-          Popular To Watch
-        </span>
-        <div className="flex-grow h-px bg-light"></div>
-      </div>
+
+      <Title title="  Popular To Watch" />
 
       <div className="grid lg:grid-cols-fluid gap-14 mb-14  mx-5 lg:mx-0">
         {data.results.map((item: Movie) => (
