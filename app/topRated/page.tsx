@@ -1,4 +1,5 @@
 import Movie from "../components/Movie";
+import Title from "../components/title";
 
 async function getData() {
   const res = await fetch(
@@ -33,13 +34,8 @@ async function TopRated() {
 
   return (
     <div className="lg:mx-5">
-      <div className="title text-white font-semibold mb-8 relative flex items-center  ">
-        <span className="flex-shrink text-2xl text-white px-4 ">
-          Latest Movies
-        </span>
-      </div>
-
-      <div className="grid grid-cols-fluid gap-16 mb-14">
+      <Title title=" Latest Movies" />
+      <div className="grid lg:grid-cols-fluid gap-14 mb-14  mx-5 lg:mx-0">
         {data.results.map((item: Movie) => (
           <Movie
             category={"topRated"}
