@@ -45,7 +45,7 @@ export async function generateStaticParams() {
   for (const value of Object.values(movies)) {
     value.results.map((item: any) => arrayOfIds.push(item.id));
   }
-  console.log(arrayOfIds);
+
   return arrayOfIds?.map((movieId) => ({
     category: "topRated" || "popular",
     id: movieId.toString(),
