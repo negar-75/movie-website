@@ -3,9 +3,7 @@ import Movie from "./components/Movie";
 import Title from "./components/title";
 
 async function getData() {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=1`
-  );
+  const res = await fetch("http://localhost:3000/api/popular-movie");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -32,7 +30,7 @@ type Movie = {
 };
 async function Home() {
   const data = await getData();
-
+  console.log(data);
   return (
     <div className="lg:mx-5">
       <Header />
@@ -40,7 +38,7 @@ async function Home() {
       <Title title="  Popular To Watch" />
 
       <div className="grid lg:grid-cols-fluid gap-14 mb-14  mx-5 lg:mx-0">
-        {data.results.map((item: Movie) => (
+        {data.data.results.map((item: Movie) => (
           <Movie
             key={item.id}
             image={item.poster_path}
