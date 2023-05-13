@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Head from "next/head";
 import Footer from "./components/Footer";
 config.autoAddCss = false;
 
@@ -26,6 +27,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          name="description"
+          content="movie website"
+        />
+      </Head>
       <body className={`  bg-dark`}>
         <div className=" w-screen flex flex-col lg:flex-row ">
           <Sidebar />
