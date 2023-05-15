@@ -3,7 +3,7 @@ import Title from "../components/title";
 
 async function getData() {
   const res = await import("../api/top-rated/route");
-  console.log(await (await res.GET()).json());
+  console.log(await res.GET());
 
   return await (await res.GET()).json();
 }
