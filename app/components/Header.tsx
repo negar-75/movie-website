@@ -1,7 +1,6 @@
 "client side";
 import "animate.css";
 import { Cloudinary } from "@cloudinary/url-gen";
-
 import { AdvancedVideo } from "@cloudinary/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +28,7 @@ function Header() {
         className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2"
       >
         <source
-          src={compressedVideoUrl}
+          src={"./header.mp4"}
           type="video/webm"
         />
       </video>
