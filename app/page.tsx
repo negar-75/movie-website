@@ -3,7 +3,7 @@ import Movie from "./components/Movie";
 import Title from "./components/title";
 
 async function getData() {
-  const res = await fetch(`http://localhost:3000/api/popular-movie`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/popular-movie`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
