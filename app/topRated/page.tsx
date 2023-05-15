@@ -2,9 +2,7 @@ import Movie from "../components/Movie";
 import Title from "../components/title";
 
 async function getData() {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=1`
-  );
+  const res = await fetch(`http://localhost:3000/api/top-rated`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -12,6 +10,7 @@ async function getData() {
 
   return res.json();
 }
+
 type Movie = {
   adult: boolean;
   backdrop_path: string;
@@ -36,7 +35,7 @@ async function TopRated() {
     <div className="lg:mx-5">
       <Title title=" Latest Movies" />
       <div className="grid lg:grid-cols-fluid gap-14 mb-14  mx-5 lg:mx-0">
-        {data.results.map((item: Movie) => (
+        {data.data.results.map((item: Movie) => (
           <Movie
             category={"topRated"}
             key={item.id}
