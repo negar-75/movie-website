@@ -2,7 +2,7 @@ import Movie from "../components/Movie";
 import Title from "../components/title";
 
 async function getData() {
-  const res = await fetch(`http://localhost:3000/api/top-rated`);
+  const res = await fetch(`/api/top-rated`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
