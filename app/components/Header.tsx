@@ -28,7 +28,7 @@ function Header() {
         className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2"
       >
         <source
-          src={"./header.mp4"}
+          src={"./header-webm.webm"}
           type="video/webm"
         />
       </video>
