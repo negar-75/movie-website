@@ -2,13 +2,10 @@ import Movie from "../components/Movie";
 import Title from "../components/title";
 
 async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/top-rated`);
+  const res = await import("../api/top-rated/route");
+  console.log(await (await res.GET()).json());
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
+  return await (await res.GET()).json();
 }
 
 type Movie = {

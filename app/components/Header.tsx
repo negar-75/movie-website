@@ -10,8 +10,8 @@ function Header() {
   const cld = new Cloudinary({
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_CLOUDNAME,
-      apiKey: process.env.NEXT_PUBLIC_CLOULD_API_KEY,
-      apiSecret: process.env.NEXT_PUBLIC_CLOULD_SECRET_KEY,
+      apiKey: process.env.NEXT_PUBLIC_CLOUD_API_KEY,
+      apiSecret: process.env.NEXT_PUBLIC_CLOUD_SECRET_KEY,
     },
   });
   const myVideo = cld.video("docs/models.mp4");
