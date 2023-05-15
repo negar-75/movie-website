@@ -1,8 +1,24 @@
 "client side";
 import "animate.css";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+import { AdvancedVideo } from "@cloudinary/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+
 function Header() {
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: process.env.NEXT_PUBLIC_CLOUDNAME,
+      apiKey: process.env.NEXT_PUBLIC_CLOULD_API_KEY,
+      apiSecret: process.env.NEXT_PUBLIC_CLOULD_SECRET_KEY,
+    },
+  });
+  const myVideo = cld.video("docs/models.mp4");
+
+  myVideo.quality("40");
+  const compressedVideoUrl = myVideo.toURL();
+  console.log(compressedVideoUrl);
   return (
     <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
       <video
@@ -10,14 +26,17 @@ function Header() {
         autoPlay
         loop
         muted
-        poster="https://assets.codepen.io/6093409/river.jpg"
         className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2"
       >
         <source
-          src="/header.mp4"
+          src={compressedVideoUrl}
           type="video/webm"
         />
       </video>
+      {/* <AdvancedVideo
+        cldVid={compressedVideoUrl}
+        controls
+      /> */}
 
       <div className="absolute lg:top-40 left-10 text-white max-[640px]:w-[200px] whitespace-pre-line bottom-[300px] z-[8]">
         <div>
