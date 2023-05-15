@@ -20,7 +20,7 @@ function Movie({ image, title, averageVote, id, category }: MovieProps) {
   const imagePath = "https://image.tmdb.org/t/p/original";
 
   return (
-    <Link href={`/${category}/${id}`}>
+    <Link href={`movie/${category}/${id}`}>
       <div className="bg-[#1e1b26] relative h-[500px] duration-75 flex flex-col items-center rounded-md overflow-hidden">
         <div className="relative w-full h-[70%]">
           <div
