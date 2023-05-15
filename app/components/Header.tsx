@@ -23,6 +23,7 @@ function Header() {
       <video
         id="background-video"
         autoPlay
+        playsInline
         loop
         muted
         className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2"
