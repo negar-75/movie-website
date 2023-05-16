@@ -31,13 +31,20 @@ function Header() {
           autoPlay
           loop
           muted
+          preload="auto"
+          width="100%"
+          height="100%"
           controls={false}
           playsInline
-          className=" w-[100%] h-[100%] object-cover"
+          className="object-cover h-[100%]"
         >
           <source
             src={"./header-webm.webm"}
             type="video/webm"
+          />
+          <source
+            src={"./header.mp4"}
+            type="video/mp4"
           />
         </video>
       </div>
