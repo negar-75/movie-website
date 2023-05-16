@@ -6,56 +6,53 @@ import { useRef, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 
-const isSafari = () => {
-  const ua = navigator.userAgent.toLowerCase();
-  return ua.indexOf("safari") > -1 && ua.indexOf("chrome") < 0;
-};
+// const isSafari = () => {
+//   const ua = navigator.userAgent.toLowerCase();
+//   return ua.indexOf("safari") > -1 && ua.indexOf("chrome") < 0;
+// };
 function Header() {
-  const videoParentRef = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-  const [shouldUseImage, setShouldUseImage] = useState<boolean>(false);
+  //   const videoParentRef = useRef<HTMLDivElement>(null);
+  //   const [isMounted, setIsMounted] = useState<boolean>(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  //   useEffect(() => {
+  //     setIsMounted(true);
+  //   }, []);
 
-  useEffect(() => {
-    if (isSafari() && videoParentRef.current) {
-      const player = videoParentRef.current.children[0] as HTMLVideoElement;
+  //   useEffect(() => {
+  //     if (isSafari() && videoParentRef.current) {
+  //       const player = videoParentRef.current.children[0] as HTMLVideoElement;
 
-      if (player) {
-        player.controls = false;
-        player.playsInline = true;
-        player.muted = true;
-        player.setAttribute("muted", "");
-        player.autoplay = true;
+  //       if (player) {
+  //         player.controls = false;
+  //         player.playsInline = true;
+  //         player.muted = true;
+  //         player.setAttribute("muted", "");
+  //         player.autoplay = true;
 
-        setTimeout(() => {
-          const promise = player.play();
+  //         setTimeout(() => {
+  //           const promise = player.play();
 
-          if (promise.then) {
-            promise
-              .then(() => {})
-              .catch(() => {
-                if (videoParentRef.current) {
-                  videoParentRef.current.style.display = "none";
-                }
-                setShouldUseImage(true);
-              });
-          }
-        }, 0);
-      }
-    }
-  }, []);
+  //           if (promise.then) {
+  //             promise
+  //               .then(() => {})
+  //               .catch(() => {
+  //                 if (videoParentRef.current) {
+  //                   videoParentRef.current.style.display = "none";
+  //                 }
+  //                 setShouldUseImage(true);
+  //               });
+  //           }
+  //         }, 0);
+  //       }
+  //     }
+  //   }, []);
 
   return (
     <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
-      {isMounted && (
-        <div
-          ref={videoParentRef}
-          className="absolute left-0 top-0 w-[100%] h-[100%] -z-2 "
-          dangerouslySetInnerHTML={{
-            __html: `<video
+      <div
+        className="absolute left-0 top-0 w-[100%] h-[100%] -z-2 "
+        dangerouslySetInnerHTML={{
+          __html: `<video
            id="background-video"
            autoPlay
            playsInline
@@ -66,14 +63,15 @@ function Header() {
              src="./header-webm.webm"
            />
          </video>`,
-          }}
-        ></div>
-      )}
+        }}
+      ></div>
+
       {/* <video
         id="background-video"
         autoPlay
         playsInline
         loop
+        muted
         className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2"
       >
         <source
