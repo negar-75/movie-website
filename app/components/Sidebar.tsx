@@ -1,16 +1,13 @@
-import Link from "next/link";
 import { sidebarMenu } from "../../data/sidebarMenu";
+import Logo from "./Logo";
 function Sidebar() {
   return (
     <div className="max-h-screen lg:flex flex-row basis-1/6 hidden ">
       <div className="flex flex-col overflow-hidden w-[100%] border-r-[1px] border-light">
-        <div className="flex items-center justify-center h-20 ">
-          <h1 className="text-3xl uppercase text-white ">
-            <Link href={"/"}>
-              <span className="text-red-800">CINEMA</span>CITY
-            </Link>
-          </h1>
-        </div>
+        <Logo
+          fontSize="text-3xl"
+          height="h-20"
+        />
         <ul className="flex flex-col py-4">
           {sidebarMenu.map((item, index) => {
             if (item.title === "Notification") {
