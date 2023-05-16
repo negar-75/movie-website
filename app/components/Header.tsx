@@ -1,44 +1,75 @@
-"client side";
+"use client";
 import "animate.css";
-import { Cloudinary } from "@cloudinary/url-gen";
-import { AdvancedVideo } from "@cloudinary/react";
+
+import { useRef, useState, useEffect } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 
+const isSafari = () => {
+  const ua = navigator.userAgent.toLowerCase();
+  return ua.indexOf("safari") > -1 && ua.indexOf("chrome") < 0;
+};
 function Header() {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: process.env.NEXT_PUBLIC_CLOUDNAME,
-      apiKey: process.env.NEXT_PUBLIC_CLOUD_API_KEY,
-      apiSecret: process.env.NEXT_PUBLIC_CLOUD_SECRET_KEY,
-    },
-  });
-  const myVideo = cld.video("docs/models.mp4");
+  const videoParentRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [shouldUseImage, setShouldUseImage] = useState<boolean>(false);
 
-  myVideo.quality("40");
-  const compressedVideoUrl = myVideo.toURL();
-  console.log(compressedVideoUrl);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isSafari() && videoParentRef.current) {
+      const player = videoParentRef.current.children[0] as HTMLVideoElement;
+
+      if (player) {
+        player.controls = false;
+        player.playsInline = true;
+        player.muted = true;
+        player.setAttribute("muted", "");
+        player.autoplay = true;
+
+        setTimeout(() => {
+          const promise = player.play();
+
+          if (promise.then) {
+            promise
+              .then(() => {})
+              .catch(() => {
+                if (videoParentRef.current) {
+                  videoParentRef.current.style.display = "none";
+                }
+                setShouldUseImage(true);
+              });
+          }
+        }, 0);
+      }
+    }
+  }, []);
+
   return (
     <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
-      {/* <div
-        className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2 bg-fuchsia-400"
-        dangerouslySetInnerHTML={{
-          __html: `<video
-            id="background-video"
-            autoPlay
-            playsInline
-            loop
-            className="w-[100%] h-[100%] object-cover 
-          >
-          <source
-          src="./header-webm.webm"
-         
-        />
-     
-</video>`,
-        }}
-      ></div> */}
-      <video
+      {isMounted && (
+        <div
+          ref={videoParentRef}
+          className="absolute left-0 top-0 w-[100%] h-[100%] -z-2 "
+          dangerouslySetInnerHTML={{
+            __html: `<video
+           id="background-video"
+           autoPlay
+           playsInline
+           loop
+           style="width: 100%; height: 100%; object-fit: cover;"
+         >
+           <source
+             src="./header-webm.webm"
+           />
+         </video>`,
+          }}
+        ></div>
+      )}
+      {/* <video
         id="background-video"
         autoPlay
         playsInline
@@ -49,7 +80,7 @@ function Header() {
           src={"./header-webm.webm"}
           type="video/webm"
         />
-      </video>
+      </video> */}
       {/* <AdvancedVideo
         cldVid={compressedVideoUrl}
         controls
