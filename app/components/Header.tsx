@@ -20,12 +20,29 @@ function Header() {
   console.log(compressedVideoUrl);
   return (
     <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
+      {/* <div
+        className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2 bg-fuchsia-400"
+        dangerouslySetInnerHTML={{
+          __html: `<video
+            id="background-video"
+            autoPlay
+            playsInline
+            loop
+            className="w-[100%] h-[100%] object-cover 
+          >
+          <source
+          src="./header-webm.webm"
+         
+        />
+     
+</video>`,
+        }}
+      ></div> */}
       <video
         id="background-video"
         autoPlay
         playsInline
         loop
-        muted
         className="absolute left-0 top-0 w-[100%] h-[100%] object-cover -z-2"
       >
         <source
