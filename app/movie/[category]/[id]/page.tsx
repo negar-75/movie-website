@@ -63,27 +63,26 @@ async function MoviePage({ params }: any) {
   const data = await res.json();
 
   return (
-    <div className="text-white px-8 py-4 relative">
+    <div className="text-white lg:px-8  relative">
       <div className=" h-[500px] w-full relative mb-10">
         <Image
-          className=" object-cover rounded-2xl "
+          className=" object-cover lg:rounded-2xl "
           src={imagePath + data.backdrop_path}
           alt={data.title}
           fill
           priority
         />
       </div>
-      <div className="">
-        <h2 className="text-4xl">{data.title}</h2>
+      <div className="px-3 ">
+        <h2 className="lg:text-4xl text-3xl">{data.title}</h2>
         <h1 className="text-lg ">{data.release_date}</h1>
         <h4>Runtime: {data.runtime} minutes</h4>
         <h2 className="bg-green-600 inline-block my-2 py-2 px-4 rounded-lg text-sm">
           {data.status}
         </h2>
-      </div>
-      <div className="my-4">
         <p className="text-lg">{data.overview}</p>
       </div>
+
       <VoteCard
         rate={data?.vote_average?.toFixed(1)}
         voteCount={data.vote_count}
