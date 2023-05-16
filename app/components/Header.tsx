@@ -31,6 +31,7 @@ function Header() {
           autoPlay
           loop
           muted
+          controls={false}
           playsInline
           className=" w-[100%] h-[100%] object-cover"
         >
