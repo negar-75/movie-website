@@ -29,9 +29,9 @@ function Header() {
         <video
           id="background-video"
           autoPlay
-          playsInline
           loop
           muted
+          playsInline
           className=" w-[100%] h-[100%] object-cover"
         >
           <source
