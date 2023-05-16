@@ -49,7 +49,7 @@ function Header() {
 
   return (
     <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
-      <div
+      {/* <div
         className="absolute left-0 top-0 w-[100%] h-[100%] -z-2 "
         dangerouslySetInnerHTML={{
           __html: `<video
@@ -64,9 +64,9 @@ function Header() {
            />
          </video>`,
         }}
-      ></div>
+      ></div> */}
 
-      {/* <video
+      <video
         id="background-video"
         autoPlay
         playsInline
@@ -78,7 +78,7 @@ function Header() {
           src={"./header-webm.webm"}
           type="video/webm"
         />
-      </video> */}
+      </video>
       {/* <AdvancedVideo
         cldVid={compressedVideoUrl}
         controls
