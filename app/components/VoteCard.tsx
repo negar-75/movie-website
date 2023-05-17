@@ -8,7 +8,7 @@ type VoteCardProps = {
 
 function VoteCard({ rate, voteCount }: VoteCardProps) {
   return (
-    <div className="absolute  right-[5%] px-[3em] py-[2em] bg-lightRed flex flex-col items-center text-black lg:px-[2em] lg:py-[1em] top-[34%] lg:right-16">
+    <div className="absolute  right-[5%] px-[3em] py-[2em] bg-lightRed flex flex-col items-center text-black lg:px-[2em] lg:py-[1em] top-[36%] lg:right-16">
       <div className=" lg:text-[10rem] font-thin text-[4rem]">{rate}</div>
       <FontAwesomeIcon
         icon={faStar}
