@@ -17,7 +17,7 @@ function MobileSideBarMenu({
     <div
       className={`${
         isMenuOpen ? "grid" : "hidden"
-      }  grid-rows-12  gap-y-10 fixed top-0 right-0 left-0 bottom-0 h-screen bg-neutral-300 transition-all duration-75 md:hidden pb-10 overflow-scroll`}
+      }  grid-rows-12  gap-y-10 fixed top-0 right-0 left-0 bottom-0 h-screen bg-neutral-300 transition-all duration-75 md:hidden pb-10 overflow-y-scroll overflow-x-hidden`}
     >
       <div className="py-[10px] justify-center row-[1/3] flex items-center">
         <div
