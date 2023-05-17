@@ -17,7 +17,7 @@ function MobileSideBarMenu({
     <div
       className={`${
         isMenuOpen ? "grid" : "hidden"
-      }  grid-rows-12  gap-y-10 fixed top-0 right-0 left-0 bottom-0 h-[120vh] bg-neutral-300 transition-all duration-75 md:hidden pb-10 overflow-y-scroll overflow-x-hidden`}
+      }  grid-rows-12  gap-y-10 fixed top-0 right-0 left-0 bottom-0 h-[100vh] bg-neutral-300 transition-all duration-75 md:hidden pb-10 overflow-y-scroll overflow-x-hidden`}
     >
       <div className="py-[10px] justify-center row-[1/3] flex items-center">
         <div
@@ -31,7 +31,7 @@ function MobileSideBarMenu({
         </div>
       </div>
 
-      <div className=" row-[3/12]">
+      <div className=" row-[3/10]">
         <ul className="text-center text-3xl space-y-5">
           <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
             Movies
@@ -53,10 +53,12 @@ function MobileSideBarMenu({
           </li>
         </ul>
       </div>
-      <Logo
-        fontSize="text-xl"
-        height="h-20"
-      />
+      <div className="row-[10/13]">
+        <Logo
+          fontSize="text-xl"
+          height="h-30"
+        />
+      </div>
     </div>
   );
 }
