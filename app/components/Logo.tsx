@@ -9,8 +9,11 @@ function Logo({ fontSize, height }: LogoProps) {
   return (
     <div className={`flex items-center justify-center ${height} `}>
       <h1 className={`${fontSize} uppercase text-white `}>
-        <Link href={"/"}>
-          <span className="text-red-800">CINEMA</span>CITY
+        <Link
+          href={"/"}
+          className="cursor-default"
+        >
+          <span className="text-red-800 ">CINEMA</span>CITY
         </Link>
       </h1>
     </div>
