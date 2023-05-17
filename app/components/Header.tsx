@@ -9,22 +9,6 @@ import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 function Header() {
   return (
     <div className="lg:h-[500px] mb-10 h-[100vh] relative z-0 ">
-      {/* <div
-        className="absolute left-0 top-0 w-[100%] h-[100%] -z-2 "
-        dangerouslySetInnerHTML={{
-          __html: `<video
-           id="background-video"
-           autoPlay
-           playsInline
-           loop
-           style="width: 100%; height: 100%; object-fit: cover;"
-         >
-           <source
-             src="./header-webm.webm"
-           />
-         </video>`,
-        }}
-      ></div> */}
       <div className="absolute left-0 top-0 w-[100%] h-[100%] -z-2 ">
         <video
           id="background-video"
