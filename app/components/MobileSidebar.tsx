@@ -10,7 +10,7 @@ function MobileSidebar() {
   return (
     <>
       <div
-        className="md:hidden  w-[15%] text-center cursor-pointer"
+        className="md:hidden w-[15%] text-center cursor-pointer"
         onClick={() => {
           console.log("hello");
           setIsMenuOpen(true);
@@ -18,7 +18,7 @@ function MobileSidebar() {
       >
         <FontAwesomeIcon
           icon={faBars}
-          className="text-xl"
+          className="text-xl text-red-800"
         />
       </div>
       <MobileSideBarMenu
