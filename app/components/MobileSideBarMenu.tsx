@@ -31,7 +31,7 @@ function MobileSideBarMenu({
         </div>
       </div>
 
-      <div className=" row-[3/12]">
+      <div className=" row-[3/10]">
         <ul className="text-center text-3xl space-y-5">
           <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
             Movies
@@ -53,10 +53,11 @@ function MobileSideBarMenu({
           </li>
         </ul>
       </div>
-      <Logo
-        fontSize="text-xl"
-        height="h-20"
-      />
+      <div className={`flex items-center justify-center row-[10/13] `}>
+        <h1 className={`text-2xl uppercase text-white `}>
+          <span className="text-red-800 ">CINEMA</span>CITY
+        </h1>
+      </div>
     </div>
   );
 }
