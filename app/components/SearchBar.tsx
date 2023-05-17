@@ -1,4 +1,4 @@
-"client side";
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState, useMemo } from "react";
@@ -30,47 +30,24 @@ function SearchBar() {
   };
 
   return (
-    <>
+    <div className="max-[640px]:w-[15%] max-[640px]:text-center md:mr-auto">
       <div
-        className="lg:hidden block cursor-pointer px-5 relative  text-red-800 text-xl"
+        className="min-[640px]:hidden block cursor-pointer relative  text-red-800 text-xl"
         onClick={() => setSearchSectionIsOpen((pre) => !pre)}
       >
-        {"explore"
-          .toUpperCase()
-          .split("")
-          .map((character, index) => {
-            return (
-              <span
-                key={index}
-                className={
-                  !searchSectionIsOpen
-                    ? `animate-wave animation-delay-${
-                        (index + 1) * 100
-                      } inline-block relative`
-                    : " "
-                }
-              >
-                {character}
-              </span>
-            );
-          })}
+        <FontAwesomeIcon icon={faSearch} />
       </div>
       <div
-        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex  items-center max-[640px]:w-full justify-center lg:mr-auto top-[100%] h-0 lg:h-11 max-[640px]:overflow-hidden transition-all duration-300 ${
+        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex items-center max-[640px]:w-full justify-center top-[100%] h-0 md:h-11 max-[640px]:overflow-hidden transition-all duration-300 ${
           searchSectionIsOpen && "h-[55px]"
         }`}
       >
-        <div className="border-[1px] rounded-full border-light px-2 lg:px-4 flex items-center max-[640px]:w-[90%]   ">
+        <div className="border-[1px] rounded-full border-light px-2 md:px-4 flex items-center max-[640px]:w-[90%]   ">
           <input
             type="text"
             placeholder="Search..."
             className="py-2  bg-transparent outline-none text-light max-[640px]:w-[90%] lg:w-[300px]"
             onChange={handleInput}
-          />
-          <FontAwesomeIcon
-            icon={faSearch}
-            style={{ fontSize: 20, color: "#807979", cursor: "pointer" }}
-            className=" max-[640px]:w-[10%] "
           />
         </div>
       </div>
@@ -93,7 +70,7 @@ function SearchBar() {
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 }
 export default SearchBar;
