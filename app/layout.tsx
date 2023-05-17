@@ -32,6 +32,10 @@ export default function RootLayout({
           name="description"
           content="movie website"
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        ></meta>
       </Head>
       <body className={`  bg-dark`}>
         <div className=" w-screen flex flex-col lg:flex-row ">
