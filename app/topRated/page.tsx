@@ -1,5 +1,5 @@
 import Movie from "../components/Movie";
-import Title from "../components/Title";
+import Title from "../components/title";
 
 async function getData() {
   const res = await import("../api/top-rated/route");
