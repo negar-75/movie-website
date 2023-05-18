@@ -1,8 +1,6 @@
 "use client";
 import "animate.css";
 
-import { useRef, useState, useEffect } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 
