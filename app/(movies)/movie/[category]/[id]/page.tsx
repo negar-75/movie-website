@@ -1,4 +1,4 @@
-import VoteCard from "@/app/components/voteCard";
+import VoteCard from "@/app/components/VoteCard";
 import Image from "next/image";
 
 type Movie = {

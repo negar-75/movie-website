@@ -1,6 +1,6 @@
 "use client";
 
-import DrinkCard from "@/app/components/drinkCard";
+import DrinkCard from "@/app/components/DrinkCard";
 import { Fade } from "react-slideshow-image";
 import { useEffect, useState } from "react";
 
