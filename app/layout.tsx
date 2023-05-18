@@ -1,12 +1,11 @@
 "use client";
 import "./globals.css";
+import "react-slideshow-image/dist/styles.css";
 import { Roboto, Poppins } from "@next/font/google";
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Head from "next/head";
-import Footer from "./components/Footer";
+
 config.autoAddCss = false;
 
 // const roboto = Roboto({
@@ -34,19 +33,10 @@ export default function RootLayout({
         />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+          content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
         ></meta>
       </Head>
-      <body className={`  bg-dark`}>
-        <div className=" w-screen flex flex-col lg:flex-row ">
-          <Sidebar />
-          <div className="basis-5/6">
-            <Navbar />
-            {children}
-          </div>
-        </div>
-        <Footer />
-      </body>
+      <body className={`  bg-dark`}>{children}</body>
     </html>
   );
 }
