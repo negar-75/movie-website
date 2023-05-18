@@ -1,6 +1,6 @@
-import Header from "@/app/components/Header";
-import Movie from "@/app/components/Movie";
-import Title from "@/app/components/Title";
+import Header from "@/app/components/header";
+import Movie from "@/app/components/movie";
+import Title from "@/app/components/title";
 
 async function getData() {
   const res = await import("../api/popular-movie/route");

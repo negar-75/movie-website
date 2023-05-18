@@ -1,5 +1,5 @@
-import MovieMenu from "@/app/components/MovieMenu";
-import NavbarOption from "@/app/components/NavbarOption";
+import MovieMenu from "@/app/components/movieMenu";
+import NavbarOption from "@/app/components/navbarOption";
 function NavbarOptions() {
   return (
     <div className="text-light mr-auto hidden gap-16 h-full  md:flex">

@@ -1,10 +1,10 @@
 "use client";
 
-import Sidebar from "@/app/components/Sidebar";
-import Navbar from "@/app/components/Navbar";
+import Sidebar from "@/app/components/sidebar";
+import Navbar from "@/app/components/navbar";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Footer from "@/app/components/Footer";
+import Footer from "@/app/components/footer";
 config.autoAddCss = false;
 
 export default function MovieLayout({

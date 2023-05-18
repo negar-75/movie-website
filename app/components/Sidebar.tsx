@@ -1,5 +1,5 @@
 import { sidebarMenu } from "../../data/sidebarMenu";
-import Logo from "./logo";
+import Logo from "@/app/components/logo";
 function Sidebar() {
   return (
     <div className="max-h-screen lg:flex flex-row basis-1/6 hidden ">
