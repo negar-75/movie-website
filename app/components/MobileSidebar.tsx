@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import MobileSideBarMenu from "./mobileSideBarMenu";
+import MobileSideBarMenu from "@/app/components/MobileSideBarMenu";
 
 function MobileSidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
