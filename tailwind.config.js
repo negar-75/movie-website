@@ -39,7 +39,7 @@ module.exports = {
         dark: "#292626",
         light: "#a19797",
         yellow: "rgba(255,193,7,.65);",
-        lightRed: "rgba(181, 176, 176,.65);",
+        lightRed: "rgba(181, 176, 176,.55);",
       },
       keyframes: {
         wave: {
