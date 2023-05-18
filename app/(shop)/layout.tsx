@@ -1,7 +1,7 @@
 "use client";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Navbar from "../components/navbar";
+import Navbar from "@/app/components/navbar";
 config.autoAddCss = false;
 
 export default function DrinksLayout({
