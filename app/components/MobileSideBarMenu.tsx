@@ -2,7 +2,7 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-import Logo from "./Logo";
+import Logo from "./logo";
 
 type MobileSideBarMenuProps = {
   isMenuOpen: boolean;
