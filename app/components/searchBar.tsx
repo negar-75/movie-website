@@ -30,23 +30,23 @@ function SearchBar() {
   };
 
   return (
-    <div className="max-[640px]:w-[15%] max-[640px]:text-center md:mr-auto">
+    <div className="max-[652px]:w-[15%] max-[652px]:text-center md:mr-auto">
       <div
-        className="min-[640px]:hidden block cursor-pointer relative  text-red-800 text-xl"
+        className="min-[652px]:hidden block cursor-pointer relative  text-red-800 text-xl"
         onClick={() => setSearchSectionIsOpen((pre) => !pre)}
       >
         <FontAwesomeIcon icon={faSearch} />
       </div>
       <div
-        className={`max-[640px]:bg-stone-200 max-[640px]:absolute flex items-center max-[640px]:w-full justify-center top-[100%] h-0 md:h-11 max-[640px]:overflow-hidden transition-all duration-300 ${
+        className={`max-[652px]:bg-stone-200 max-[652px]:absolute flex items-center max-[652px]:w-full justify-center top-[100%] h-0 md:h-11 max-[652px]:overflow-hidden transition-all duration-300 ${
           searchSectionIsOpen && "h-[55px]"
         }`}
       >
-        <div className="border-[1px] rounded-full border-light px-2 md:px-4 flex items-center max-[640px]:w-[90%]   ">
+        <div className="border-[1px] rounded-full border-light px-2 md:px-4 flex items-center max-[652px]:w-[90%]   ">
           <input
             type="text"
             placeholder="Search..."
-            className="py-2  bg-transparent outline-none text-light max-[640px]:w-[90%] lg:w-[300px]"
+            className="py-2  bg-transparent outline-none text-light max-[652px]:w-[90%] lg:w-[300px]"
             onChange={handleInput}
           />
         </div>

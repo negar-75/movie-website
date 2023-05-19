@@ -17,12 +17,12 @@ function MobileSideBarMenu({
     <div
       className={`${
         isMenuOpen ? "grid" : "hidden"
-      }  grid-rows-12  gap-y-10 fixed top-0 right-0 left-0 bottom-0 h-[100vh] bg-neutral-300 transition-all duration-75 md:hidden pb-10 overflow-y-scroll overflow-x-hidden`}
+      }  grid-rows-12  gap-y-10 fixed top-0 right-0 left-0 bottom-0 h-[100vh] bg-neutral-300 transition-all duration-75 min-[652px]:hidden pb-10 overflow-y-scroll overflow-x-hidden`}
     >
-      <div className="py-[10px] justify-center row-[1/3] flex items-center">
+      <div className="py-[10px] justify-center row-[1/3] flex items-center ">
         <div
           onClick={() => setIsMenuOpen(false)}
-          className=" border-black border-4 h-[40px] w-[40px] rounded-full flex items-center justify-center p-6 cursor-pointer hover:border-red-800"
+          className=" border-black border-4 h-[40px] w-[40px]  rounded-full flex items-center justify-center p-6 cursor-pointer hover:border-red-800"
         >
           <FontAwesomeIcon
             icon={faClose}

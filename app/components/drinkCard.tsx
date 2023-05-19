@@ -14,7 +14,7 @@ function DrinkCard({ imageUrl, desc, title }: DrinkProps) {
   return (
     <div
       style={{ "--image-url": `url(${imageUrl})` } as React.CSSProperties}
-      className={`md:flex md:flex-row  md:h-[550px] h-[620px] rounded-lg overflow-hidden relative max-[640px]:bg-[image:var(--image-url)] max-[640px]:bg-cover `}
+      className={`min-[652px]:flex md:flex-row  min-[652px]:h-[550px] h-[620px] rounded-lg overflow-hidden relative max-[652px]:bg-[image:var(--image-url)] max-[652px]:bg-cover `}
     >
       <div className="md:basis-[40%]  basis-[70%]">
         <div className="relative h-[100%]">
@@ -26,9 +26,9 @@ function DrinkCard({ imageUrl, desc, title }: DrinkProps) {
           />
         </div>
       </div>
-      <div className="md:basis-[60%] bg-stone-300 md:p-10 flex flex-col   md:justify-between max-[640px]:h-[50%] max-[640px]:bg-lightRed p-5 max-[640px]:absolute bottom-0 ">
+      <div className="min-[652px]:basis-[60%] bg-stone-300 md:p-10 flex flex-col  min-[652px]:justify-between max-[652px]:h-[50%] max-[652px]:bg-lightRed p-5 max-[652px]:absolute bottom-0 ">
         <span
-          className={`${playfair_display.className} max-[640px]:mb-5 text-center  border-y-2 md:py-2 md:px-5 border-black text-2xl font-semibold md:text-4xl`}
+          className={`${playfair_display.className} max-[652px]:mb-3 text-center  border-y-2 min-[652px]:py-2 min-[652px]:px-5 border-black text-2xl font-semibold min-[652px]:text-4xl`}
         >
           {title}
         </span>
@@ -38,7 +38,7 @@ function DrinkCard({ imageUrl, desc, title }: DrinkProps) {
           {desc}
         </p>
         <button
-          className={`${poppins.className} max-[640px]:w-[90%] border-2 md:py-2 md:px-5 text-black border-black py-1 max-[640px]:absolute bottom-5`}
+          className={`${poppins.className} max-[652px]:w-[90%] border-2 min-[652px]:py-2 min-[652px]:px-5 text-black border-black py-1 max-[652px]:absolute bottom-5`}
         >
           <span>Discover more</span>
           <FontAwesomeIcon
