@@ -12,7 +12,6 @@ function MobileSidebar() {
       <div
         className="min-[652px]:hidden w-[15%] text-center cursor-pointer"
         onClick={() => {
-          console.log("hello");
           setIsMenuOpen(true);
         }}
       >
