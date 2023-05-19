@@ -3,6 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import Logo from "./logo";
+import Link from "next/link";
 
 type MobileSideBarMenuProps = {
   isMenuOpen: boolean;
@@ -32,25 +33,37 @@ function MobileSideBarMenu({
       </div>
 
       <div className=" row-[3/10]">
-        <ul className="text-center text-3xl space-y-5">
-          <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
-            Movies
-          </li>
-          <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
-            Serials
-          </li>
-          <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
-            Artist
-          </li>
-          <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
-            Shopping
-          </li>
-          <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
-            Drinks
-          </li>
-          <li className="cursor-pointer  py-2 hover:translate-x-3 transition-transform ease-in duration-200">
-            Profile
-          </li>
+        <ul className="text-center text-3xl ">
+          <Link href={"/"}>
+            <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
+              Movies
+            </li>
+          </Link>
+          <Link href={"/"}>
+            <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
+              Serials
+            </li>
+          </Link>
+          <Link href={"/"}>
+            <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
+              Artist
+            </li>
+          </Link>
+          <Link href={"/"}>
+            <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
+              Shopping
+            </li>
+          </Link>
+          <Link href={"/drinks"}>
+            <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
+              Drinks
+            </li>
+          </Link>
+          <Link href={"/"}>
+            <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
+              Profile
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="row-[10/13]">
