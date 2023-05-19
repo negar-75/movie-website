@@ -1,7 +1,7 @@
 "use client";
 import DrinkCard from "@/app/components/drinkCard";
 import { Fade } from "react-slideshow-image";
-import { useEffect, useState } from "react";
+
 import Title from "@/app/components/title";
 
 const buttonStyle = {
@@ -34,14 +34,12 @@ const properties = {
 };
 
 function Drinks() {
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
   return (
     <div className=" px-5 ">
-      <Title title="Drinks" />
+      <Title
+        title="Drinks"
+        home={true}
+      />
 
       <Fade
         {...properties}
