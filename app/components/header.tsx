@@ -49,7 +49,7 @@ function Header() {
         />
       </div>
       <svg
-        viewBox="0 0 192 343"
+        viewBox="-30 -30 192 310"
         fill="none"
         className="svg-draw absolute"
       >
