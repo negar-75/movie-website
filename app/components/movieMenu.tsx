@@ -3,7 +3,7 @@ import Link from "next/link";
 function MovieMenu() {
   return (
     <div
-      className="bg-black absolute top-20 left-0 z-50 h-[330px] w-[325px] hidden group-hover:grid px-4 py-3 rounded-2xl
+      className="bg-black absolute top-20 left-0 z-50 h-[330px] w-[325px] grid px-4 py-3 rounded-2xl
      grid-cols-2 grid-rows-2 gap-y-[40px] gap-x-[10px]"
     >
       <div className="text-white ">

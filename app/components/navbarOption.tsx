@@ -14,9 +14,9 @@ function NavbarOption({ name, menu }: NavbarOptionProps) {
           icon={faChevronDown}
           style={{ fontSize: 12, color: "#807979", cursor: "pointer" }}
         />
-        <span className=" cursor-pointer group">{name}</span>
+        <span className="  cursor-pointer">{name}</span>
       </div>
-      {menu}
+      <div className="hidden group-hover:block">{menu}</div>
     </div>
   );
 }
