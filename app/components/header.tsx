@@ -19,6 +19,7 @@ function Header() {
           controls={false}
           playsInline
           className="object-cover h-[100%]"
+          style={{ backgroundColor: "white" }}
         >
           <source
             src={"./header-webm.webm"}
