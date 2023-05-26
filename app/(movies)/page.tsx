@@ -7,7 +7,7 @@ async function getData() {
 
   return await (await res.GET()).json();
 }
-getData();
+
 type Movie = {
   adult: boolean;
   backdrop_path: string;
@@ -26,11 +26,10 @@ type Movie = {
 };
 async function Home() {
   const data = await getData();
-  console.log(data);
+
   return (
     <div className="lg:mx-5">
       <Header />
-
       <Title title="  Popular To Watch" />
 
       <div className="grid lg:grid-cols-fluid gap-14 mb-14  mx-5 lg:mx-0">
