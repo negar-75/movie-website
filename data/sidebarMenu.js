@@ -13,7 +13,7 @@ export const sidebarMenu = [
   },
   {
     title: "Shopping",
-    href: "#",
+    href: "/shopping",
   },
   {
     title: "Chat",
