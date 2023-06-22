@@ -1,4 +1,4 @@
-import { Poppins, Playfair_Display } from "@next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 
 const playfair_display = Playfair_Display({
   weight: ["400", "700"],
