@@ -1,9 +1,10 @@
 "use client";
-
+import { useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import Logo from "./logo";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 type MobileSideBarMenuProps = {
   isMenuOpen: boolean;
@@ -14,6 +15,10 @@ function MobileSideBarMenu({
   isMenuOpen,
   setIsMenuOpen,
 }: MobileSideBarMenuProps) {
+  const router = usePathname();
+ useEffect(() =>{
+  setIsMenuOpen(false)
+ },[router])
   return (
     <div
       className={`${
@@ -49,7 +54,7 @@ function MobileSideBarMenu({
               Artist
             </li>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/shopping"}>
             <li className="cursor-pointer  py-3 hover:translate-x-3 transition-transform ease-in duration-200">
               Shopping
             </li>
