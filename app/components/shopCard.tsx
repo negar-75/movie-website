@@ -10,7 +10,6 @@ type ShopCardProps = {
 };
 
 function ShopCard({ title, desc, image }: ShopCardProps) {
-  console.log(image);
   const carteRef = useRef<HTMLDivElement>(null);
   let observer: IntersectionObserver;
   useEffect(() => {
@@ -45,16 +44,23 @@ function ShopCard({ title, desc, image }: ShopCardProps) {
     };
   }, [carteRef]);
 
+  const makeSpaceBetweenNumberAndWord = (title: string) => {
+    console.log(title);
+    const splittedWord = title.slice(0, 7) + " " + title.slice(7, 8);
+    console.log(splittedWord);
+    return splittedWord;
+  };
+
   return (
     <>
       <div
         className={classNames(
-          "w-full grid md:grid-cols-2 grid-cols-1 grid-rows-2 p-3 gap-2"
+          "w-full grid md:grid-cols-2 md:grid-rows-1 grid-cols-1 grid-rows-2 p-3 gap-3  basis-96 md:px-8"
         )}
         ref={carteRef}
       >
-        <div className="translate-x-[-70%] [transition:opacity_0.5s,transform_1s] opacity-0 ">
-          <div className="h-full relative lg:rounded-lg overflow-hidden ">
+        <div className="translate-x-[-70%] [transition:opacity_3s,transform_1s] opacity-0   ">
+          <div className="h-full relative md:rounded-lg overflow-hidden ">
             <Image
               src={image}
               fill
@@ -63,11 +69,17 @@ function ShopCard({ title, desc, image }: ShopCardProps) {
             />
           </div>
         </div>
-        <div className="translate-x-[70%] opacity-0 [transition:opacity_0.5s,transform_1s] text-center ">
-          <div className=" text-white border-2 p-3 space-y-3">
-            <span>{title}</span>
-            <p className="whitespace-pre-wrap">{desc}</p>
-            <button className="border-2 w-[70%] py-1 uppercase">buy</button>
+        <div className="translate-x-[70%] opacity-0 [transition:opacity_3s,transform_1s] text-center  ">
+          <div className=" text-white border-2 md:p-5 flex flex-col justify-between items-center h-full md:rounded-lg p-3">
+            <span className="md:text-4xl tracking-widest text-2xl ">
+              {makeSpaceBetweenNumberAndWord(title)}
+            </span>
+            <p className="whitespace-pre-wrap tracking-wider text-xl mb-3 ">
+              {desc}
+            </p>
+            <button className="border-2 w-[70%] md:py-1 uppercase text-xl">
+              buy
+            </button>
           </div>
         </div>
       </div>
