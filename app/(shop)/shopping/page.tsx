@@ -1,9 +1,19 @@
 import ShopCard from "@/app/components/shopCard";
+import { CloudConfig } from "@cloudinary/url-gen";
+import { NextResponse } from "next/server";
 import React from "react";
 
 async function getData() {
-  const res = await import("../../api/products/route");
-  return await (await res.GET())?.json();
+  try {
+    const res = await import("../../api/products/route");
+    const response = (await res.GET()) as NextResponse;
+    const data = await response.json();
+  
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 }
 
 type Product = {
@@ -16,6 +26,7 @@ type Product = {
 async function Page() {
   const data = await getData();
   let dataArr: Product[] = [];
+
   for (const key of Object.keys(data)) {
     dataArr.push({
       id: key,
@@ -26,15 +37,18 @@ async function Page() {
   }
 
   return (
-    <div className="space-y-5">
-      {dataArr.map((product) => (
-        <ShopCard
-          key={product.id}
-          title={product.title}
-          desc={product.desc}
-          image={product.image}
-        />
-      ))}
+    <div className="space-y-5  flex flex-col">
+      {dataArr.map((product) => {
+       
+        return (
+          <ShopCard
+            key={product.id}
+            title={product.title}
+            desc={product.desc}
+            image={product.image}
+          />
+        );
+      })}
     </div>
   );
 }
