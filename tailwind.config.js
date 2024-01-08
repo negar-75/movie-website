@@ -28,10 +28,6 @@ module.exports = {
       1800: "1800ms",
     },
     extend: {
-      fontFamily: {
-        roboto: ["var(--font-roboto)"],
-        poppins: ["var(--font-poppins)"],
-      },
       gridTemplateColumns: {
         fluid: "repeat(auto-fill, minmax(15rem, 1fr))",
       },
