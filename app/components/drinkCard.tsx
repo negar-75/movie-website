@@ -4,17 +4,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { playfair_display, poppins } from "../../styles/font";
 
+
 type DrinkProps = {
   imageUrl: string;
   desc?: string;
   title?: string;
+  
 };
 
 function DrinkCard({ imageUrl, desc, title }: DrinkProps) {
+ 
+ 
+ 
   return (
     <div
+    
       style={{ "--image-url": `url(${imageUrl})` } as React.CSSProperties}
-      className={`min-[652px]:flex md:flex-row  min-[652px]:h-[550px] h-[620px] rounded-lg overflow-hidden relative max-[652px]:bg-[image:var(--image-url)] max-[652px]:bg-cover `}
+      className={`min-[652px]:flex md:flex-row  min-[652px]:h-[500px] h-[620px] rounded-lg  overflow-hidden  relative max-[652px]:bg-[image:var(--image-url)] max-[652px]:bg-cover `}
     >
       <div className="md:basis-[40%]  basis-[70%]">
         <div className="relative h-[100%]">

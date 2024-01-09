@@ -1,7 +1,5 @@
 "use client";
 import "./globals.css";
-import "react-slideshow-image/dist/styles.css";
-import { Roboto, Poppins } from "@next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Head from "next/head";
