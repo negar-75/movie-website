@@ -7,7 +7,7 @@ type LogoProps = {
 };
 function Logo({ fontSize, height }: LogoProps) {
   return (
-    <div className={`flex items-center justify-center ${height} `}>
+    <div className={`flex items-center justify-center ${height}  md:top-4`}>
       <h1 className={`${fontSize} uppercase text-white `}>
         <Link
           href={"/"}
