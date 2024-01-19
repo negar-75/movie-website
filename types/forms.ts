@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction,FormEventHandler } from "react";
 import { string, object } from "yup";
 import * as yup from "yup";
 
@@ -21,7 +21,7 @@ export const registerFormValidationScheme = object({
 });
 
 export type RegistrationFormProps<T> = {
-  onSubmit: (user: T) => Promise<void>;
+  onSubmit: FormEventHandler<HTMLFormElement>;
   errors: Record<string, string>;
   onInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
   inputsList: InputType[];
