@@ -14,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <title>best Movie website</title>
         <meta name="description" content="movie website" />
         <meta
           name="viewport"
