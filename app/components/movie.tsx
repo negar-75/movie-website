@@ -38,7 +38,7 @@ function Movie({ image, title, averageVote, id, category }: MovieProps) {
         <Image
           src={imagePath + image}
           data-testid="#poster"
-          alt="movie poster"
+          alt={title}
           fill
           className=" mb-2 cursor-pointer object-cover object-top "
         />
