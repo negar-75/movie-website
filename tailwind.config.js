@@ -27,6 +27,9 @@ module.exports = {
       1700: "1700ms",
       1800: "1800ms",
     },
+    fontFamily:{
+      'nanum':['"Nanum Myeongjo"', 'serif']
+    },
     extend: {
       gridTemplateColumns: {
         fluid: "repeat(auto-fill, minmax(15rem, 1fr))",
