@@ -23,7 +23,7 @@ function SignUpPage() {
     email: "",
   });
   const [errors, setErrors] = useState<Partial<UserRegister>>({});
-  const context: Partial<UserContextApi<UserRegister>> = useProfile();
+  const context: Partial<UserContextApi> = useProfile();
   console.log(user);
   console.log(context)
   return (

@@ -10,7 +10,7 @@ export type UserDataContext = {
   email: string;
 };
 
-export type UserContextApi<T> = {
-  register: (user: T) => Promise<void>;
+export type UserContextApi = {
+  register: (user:Object) => Promise<void>;
   userData: Partial<UserDataContext>;
 };
