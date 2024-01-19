@@ -19,28 +19,28 @@ type Movie = {
 };
 
 async function getData() {
-  const response1 = await fetch(
+  const topRated = await fetch(
     `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=1`
   );
-  const response2 = await fetch(
+  const popular = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=1`
   );
 
-  if (!response1.ok || !response2.ok) {
+  if (!topRated.ok || !popular.ok) {
     throw new Error("Failed to fetch data");
   }
-  const result1 = await response1.json();
-  const result2 = await response2.json();
+  const result1 = await topRated.json();
+  const result2 = await popular.json();
 
   return {
-    response1: result1,
-    response2: result2,
+    topRatedMovies: result1,
+    popularMovies: result2,
   };
 }
 
 export async function generateStaticParams() {
   const movies = await getData();
-
+  
   let arrayOfIds: string[] = [];
   for (const value of Object.values(movies)) {
     value.results.map((item: any) => arrayOfIds.push(item.id));
@@ -60,7 +60,7 @@ async function MoviePage({ params }: any) {
     `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
   );
 
-  const data = await res.json();
+  const data= await res.json();
 
   return (
     <div className="text-white lg:px-8  relative">
@@ -70,7 +70,7 @@ async function MoviePage({ params }: any) {
           src={imagePath + data.backdrop_path}
           alt={data.title}
           fill
-          priority
+          
         />
       </div>
       <div className="px-3 ">
