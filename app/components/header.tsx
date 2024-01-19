@@ -34,7 +34,7 @@ function Header() {
 
       <div className="absolute lg:top-40 left-10 text-white max-[640px]:w-[200px] whitespace-pre-line bottom-[300px] z-[8]">
         <div>
-          <p className="lg:text-8xl text-6xl font-semibold animate__animated animate__fadeInDown animate__slow tracking-[.15em] leading-relaxed">
+          <p className="lg:text-8xl text-6xl font-nanum font-semibold animate__animated animate__fadeInDown animate__slow tracking-[.15em] leading-relaxed">
             Enjoy Movie
           </p>
         </div>
