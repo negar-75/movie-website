@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <div className="md:flex h-screen text-[#807979]">
-      <div className="md:w-1/2 bg-orange-700 w-full h-full">
+      <div className="md:w-1/2  w-full h-full">
         <div className="relative w-full h-full">
           <Image
             src={
