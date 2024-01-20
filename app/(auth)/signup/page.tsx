@@ -24,8 +24,7 @@ function SignUpPage() {
   });
   const [errors, setErrors] = useState<Partial<UserRegister>>({});
   const context: Partial<UserContextApi> = useProfile();
-  console.log(user);
-  console.log(context)
+  
   return (
     <div className="w-full flex flex-col items-center">
     <RegistrationForm
